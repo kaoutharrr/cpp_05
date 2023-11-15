@@ -6,14 +6,14 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 22:47:20 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/15 22:48:45 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 22:49:51 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREACRAT_HPP
 #define BUREACRAT_HPP
 
-class
+class Bureaucrat
 
 
 
