@@ -6,15 +6,15 @@
 #    By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 22:35:53 by kkouaz            #+#    #+#              #
-#    Updated: 2023/11/19 01:39:14 by kkouaz           ###   ########.fr        #
+#    Updated: 2023/11/19 03:02:03 by kkouaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Form
 CXX = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRC = Bureaucrat.cpp main.cpp
+SRC = Bureaucrat.cpp main.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)

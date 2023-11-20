@@ -5,28 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/15 22:35:53 by kkouaz            #+#    #+#              #
-#    Updated: 2023/11/19 01:39:14 by kkouaz           ###   ########.fr        #
+#    Created: 2023/11/20 00:27:20 by kkouaz            #+#    #+#              #
+#    Updated: 2023/11/20 03:26:34 by kkouaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = ex02
 CXX = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRC = Bureaucrat.cpp main.cpp
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
+SRC = AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CXX) $(CPPFLAGS) $(SRC) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
 
-clean : 
+clean :
 	$(RM) $(OBJ)
 
 fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
-
+	

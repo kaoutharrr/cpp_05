@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 22:47:20 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/19 01:41:34 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/19 03:36:04 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdexcept>
 #include<cstring>
 
-;
+class Form;
 
 class Bureaucrat
 {
@@ -43,6 +43,7 @@ class Bureaucrat
         void increment();
         void decrement();
         int getGrade() const;
+        void signForm(Form& F);
         ~Bureaucrat();
 };
 

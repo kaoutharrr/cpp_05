@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:07:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/19 01:41:37 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/19 03:45:06 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Bureaucrat.hpp"
+#include"Form.hpp"
 
 
 
@@ -89,6 +90,33 @@ void Bureaucrat :: decrement()
     if(_grade > 150)
         throw(GradeTooLowException());
 }
+
+void Bureaucrat :: signForm(Form& F)
+{
+    try
+    {
+         F.beSigned(*this);
+    }
+    catch(Form :: GradeTooHighException &e)
+    {
+       std :: cout << _name << " couldn't sign " << F.getName() ;
+       std :: cout << " because " << e.what() << std :: endl;
+    }
+      catch(Form :: GradeTooLowException &e)
+    {
+       std :: cout << _name << " couldn't sign " << F.getName() ;
+       std :: cout << " because " << e.what() << std :: endl;
+    }
+    
+    if(F.isSigned() == true)
+    {
+        std :: cout << _name << " signed " << F.getName() << std :: endl;
+    }
+
+}
+
+
+
 Bureaucrat :: ~Bureaucrat()
 {
     std :: cout << "Destructor of Bureaucrat has been called \n";
