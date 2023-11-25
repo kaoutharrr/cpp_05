@@ -6,10 +6,11 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 03:16:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/24 16:18:58 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/25 18:34:04 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Intern.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -24,24 +25,36 @@ std :: ostream & operator << ( std :: ostream &out, AForm& F)
 }
 
 
+
 int main()
 {
-    // AForm *SH = new ShrubberyCreationForm("target of shruberry");
-   // AForm *robotomy = new RobotomyRequestForm("robotomy");
-     AForm *president = new PresidentialPardonForm("request");
-    try
-    {
-        Bureaucrat B("KOKO", 4545);
-        // SH->beSigned(B);
-        president->beSigned(B);
-        president->execute(B);
-        // president->beSigned(B);
-    } 
-    catch(...)
-    {
-        std ::  cout << "lalalalal\n";
-    }
+    Bureaucrat b("a", 12);
+    Intern  someRandomIntern;
+        AForm*   rrf;
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    rrf->beSigned(b);
+    b.executeForm(*rrf);
+    std :: cout << *rrf;
 }
+
+// int main()
+// {
+//     // AForm *SH = new ShrubberyCreationForm("target of shruberry");
+//    // AForm *robotomy = new RobotomyRequestForm("robotomy");
+//      AForm *president = new PresidentialPardonForm("request");
+//     try
+//     {
+//         Bureaucrat B("KOKO", 1);
+//         // SH->beSigned(B);
+//         president->beSigned(B);
+//         president->execute(B);
+//         // president->beSigned(B);
+//     } 
+//     catch(...)
+//     {
+//         std ::  cout << "lalalalal\n";
+//     }
+// }
 
 // int main()
 // {

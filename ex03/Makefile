@@ -5,22 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/20 00:27:20 by kkouaz            #+#    #+#              #
-#    Updated: 2023/11/24 16:04:39 by kkouaz           ###   ########.fr        #
+#    Created: 2023/11/23 20:12:05 by kkouaz            #+#    #+#              #
+#    Updated: 2023/11/25 18:28:42 by kkouaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = intern
 CXX = c++
-RM = rm -rf
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
-SRC = AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp main.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+RM  = rm -rf
+SRC = main.cpp AForm.cpp  Intern.cpp Bureaucrat.cpp PresidentialPardonForm.cpp  RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp 
 OBJ = $(SRC:.cpp=.o)
 
-all : $(NAME)
+all :  $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+	$(CXX) $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean :
 	$(RM) $(OBJ)
@@ -28,5 +29,4 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all
-	
+re : fclean all  
