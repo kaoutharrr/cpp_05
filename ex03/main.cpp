@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 03:16:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/25 18:34:04 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/25 22:49:43 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int main()
     Bureaucrat b("a", 12);
     Intern  someRandomIntern;
         AForm*   rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    rrf = someRandomIntern.makeForm("robojkjkhjjhhhltomy request", "Bender");
+    if(!rrf)
+        return 0;
     rrf->beSigned(b);
     b.executeForm(*rrf);
     std :: cout << *rrf;

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 22:47:20 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/25 20:33:44 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/25 22:45:09 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include<iostream>
 #include <stdexcept>
 #include<cstring>
-
-;
 
 class Bureaucrat
 {
