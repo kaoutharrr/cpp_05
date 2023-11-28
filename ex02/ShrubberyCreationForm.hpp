@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 01:12:58 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/21 21:16:50 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:49:26 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ShrubberyCreationForm : public AForm
         class FormNotSigned : public std :: exception
         {
             public:
-                const char* what() const _NOEXCEPT;
+                const char* what() const throw();
         };
         void execute(Bureaucrat const & executor) const;
         ~ShrubberyCreationForm();

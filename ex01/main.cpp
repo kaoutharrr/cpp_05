@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 00:35:00 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/19 03:57:59 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/28 20:16:06 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,36 +22,20 @@ std :: ostream & operator << ( std :: ostream &out, Form& F)
 int main()
 {
 
-    Bureaucrat B("lkkj", 119);
-    Form F("fifi", 120, 2);
-    std :: cout <<F;
     try
     {
-        
-        //F.beSigned(B);
+        Bureaucrat B("B1", 120);
+        Form F("F1", 120, 120);
+        Form A ("A", 121, 121);
+        A.beSigned(B);
         B.signForm(F);
-       //// B.increment();
-    }
-    catch(Bureaucrat :: GradeTooHighException &e)
-    {
+        std :: cout << A;
         std :: cout << F;
-        std :: cerr << "Exception : " << e.what() << std :: endl;
+
     }
-    catch(Bureaucrat :: GradeTooLowException &e)
+    catch(std::exception &e)
     {
-        std :: cout <<F;
         std :: cerr << "Exception : " << e.what() << std :: endl;
     }
-    catch(Form :: GradeTooHighException &e)
-    {
-        std :: cout << F;
-        std :: cerr << "Exception : " << e.what() << std :: endl;
-    }
-    catch(Form :: GradeTooLowException &e)
-    {
-        std :: cout <<F;
-        std :: cerr << "Exception : " << e.what() << std :: endl;
-    }
-   // catch(...)
-    //return 0;
+ 
 }

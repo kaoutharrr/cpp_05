@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 00:36:12 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/24 15:54:07 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:47:57 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ class AForm
         class GradeTooHighException : public std :: exception
         {
             public:
-                const char* what() const _NOEXCEPT;
+                const char* what() const throw();
         };
         class GradeTooLowException : public std :: exception
         {
             public:
-                const char* what() const _NOEXCEPT;
+                const char* what() const throw();
         };
         AForm& operator=(AForm& other);
         const std :: string& getName() const ;

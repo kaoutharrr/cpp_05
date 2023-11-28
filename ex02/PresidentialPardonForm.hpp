@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:19:39 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/22 13:39:24 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:49:26 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PresidentialPardonForm :  public AForm
         class FormNotSigned : public std :: exception
         {
             public:
-                const char* what() const _NOEXCEPT;
+                const char* what() const throw();
         };
         void execute(Bureaucrat const & executer) const;
         ~PresidentialPardonForm();

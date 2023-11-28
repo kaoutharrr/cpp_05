@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:07:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/20 03:50:34 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/28 21:59:12 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include"AForm.hpp"
 
 
-const char*  Bureaucrat :: GradeTooHighException ::  what() const  _NOEXCEPT
+const char*  Bureaucrat :: GradeTooHighException ::  what() const throw()
 {
     return("Grade too high");
 }
 
-const char*  Bureaucrat :: GradeTooLowException ::  what() const  _NOEXCEPT
+const char*  Bureaucrat :: GradeTooLowException ::  what() const throw()
 {
     return("Grade too low");
 }
@@ -27,8 +27,7 @@ const char*  Bureaucrat :: GradeTooLowException ::  what() const  _NOEXCEPT
 
 Bureaucrat :: Bureaucrat() : _name("default")
 {
-    _grade = 0;
-    std :: cout << "Default constructor of Bureaucrat has been called\n";
+    _grade = 150;
     if(_grade < 1)
         throw(GradeTooHighException());
     if(_grade > 150)
@@ -39,7 +38,6 @@ Bureaucrat :: Bureaucrat(const std :: string& name, int grade) : _name(name)
 {
     _grade = grade;
     
-    std :: cout << "Parametrized constructor of Bureaucrat has been called \n";
     if(_grade < 1)
         throw(GradeTooHighException());
     if(_grade > 150)
@@ -48,13 +46,11 @@ Bureaucrat :: Bureaucrat(const std :: string& name, int grade) : _name(name)
 
 Bureaucrat :: Bureaucrat(Bureaucrat& other)
 {
-    std :: cout << "Copy constructor of Bureaucrat has been called \n";
         *this = other;
 }
 
 Bureaucrat& Bureaucrat :: operator=(Bureaucrat& other) 
 {
-    std :: cout << "Copy assignement operator of Bureaucrat has been called \n";
     if(this == &other)
         return(*this);
     _grade = other._grade;
@@ -130,6 +126,5 @@ void  Bureaucrat :: executeForm(AForm const & form)
 
 Bureaucrat :: ~Bureaucrat()
 {
-    std :: cout << "Destructor of Bureaucrat has been called \n";
 }
 

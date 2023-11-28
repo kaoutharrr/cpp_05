@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 03:54:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/22 13:44:30 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:49:26 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RobotomyRequestForm : public AForm
         class FormNotSigned : public std :: exception
         {
             public:
-                const char* what() const _NOEXCEPT;
+                const char* what() const throw();
         };
         void execute(Bureaucrat const & executor) const;
         ~RobotomyRequestForm();

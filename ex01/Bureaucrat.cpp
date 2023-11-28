@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:07:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/19 03:45:06 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/28 21:54:14 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 
 
-const char*  Bureaucrat :: GradeTooHighException ::  what() const  _NOEXCEPT
+const char*  Bureaucrat :: GradeTooHighException ::  what() const throw()
 {
     return("Grade too high");
 }
 
-const char*  Bureaucrat :: GradeTooLowException ::  what() const  _NOEXCEPT
+const char*  Bureaucrat :: GradeTooLowException ::  what() const  throw()
 {
     return("Grade too low");
 }
@@ -28,8 +28,7 @@ const char*  Bureaucrat :: GradeTooLowException ::  what() const  _NOEXCEPT
 
 Bureaucrat :: Bureaucrat() : _name("default")
 {
-    _grade = 0;
-    std :: cout << "Default constructor of Bureaucrat has been called\n";
+    _grade = 150;
     if(_grade < 1)
         throw(GradeTooHighException());
     if(_grade > 150)
@@ -39,23 +38,19 @@ Bureaucrat :: Bureaucrat() : _name("default")
 Bureaucrat :: Bureaucrat(const std :: string& name, int grade) : _name(name)
 {
     _grade = grade;
-    
-    std :: cout << "Parametrized constructor of Bureaucrat has been called \n";
     if(_grade < 1)
         throw(GradeTooHighException());
     if(_grade > 150)
         throw(GradeTooLowException());
 }
 
-Bureaucrat :: Bureaucrat(Bureaucrat& other)
+Bureaucrat :: Bureaucrat(Bureaucrat& other) : _name(other._name)
 {
-    std :: cout << "Copy constructor of Bureaucrat has been called \n";
-        *this = other;
+    *this = other;
 }
 
 Bureaucrat& Bureaucrat :: operator=(Bureaucrat& other) 
 {
-    std :: cout << "Copy assignement operator of Bureaucrat has been called \n";
     if(this == &other)
         return(*this);
     _grade = other._grade;
@@ -102,7 +97,7 @@ void Bureaucrat :: signForm(Form& F)
        std :: cout << _name << " couldn't sign " << F.getName() ;
        std :: cout << " because " << e.what() << std :: endl;
     }
-      catch(Form :: GradeTooLowException &e)
+    catch(Form :: GradeTooLowException &e)
     {
        std :: cout << _name << " couldn't sign " << F.getName() ;
        std :: cout << " because " << e.what() << std :: endl;
@@ -115,10 +110,6 @@ void Bureaucrat :: signForm(Form& F)
 
 }
 
-
-
 Bureaucrat :: ~Bureaucrat()
 {
-    std :: cout << "Destructor of Bureaucrat has been called \n";
 }
-

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:27:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/24 15:35:06 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/28 21:56:27 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,28 @@
 #include"Bureaucrat.hpp"
 
 
-const char* PresidentialPardonForm :: FormNotSigned :: what() const _NOEXCEPT
+const char* PresidentialPardonForm :: FormNotSigned :: what() const throw()
 {
     return("form not signed");
 }
 
 PresidentialPardonForm :: PresidentialPardonForm(): AForm("PresidentialPardonForm", 25, 5)
 {
-    std :: cout << "Default constructor of PresidentialPardonForm has been called \n";
     _target = "Default";
 }
 
 PresidentialPardonForm :: PresidentialPardonForm(const std :: string& target) : AForm("PresidentialPardonForm", 25, 5)
 {
-    std :: cout << "Parametrized constructor of PresidentialPardonForm has been called \n";
     _target = target;
 }
 
 PresidentialPardonForm ::  PresidentialPardonForm(PresidentialPardonForm& other) : AForm(other)
 {
-    std :: cout << "Copy constructor of PresidentialPardonForm has been called \n";
     _target = other._target;
 }
 
 PresidentialPardonForm& PresidentialPardonForm ::  operator=(PresidentialPardonForm & other) 
 {
-    std :: cout << "Copy assignement operator of PresidentialPardonForm has been called \n";
     _target = other._target;
     return(*this);
 }
@@ -55,5 +51,4 @@ void PresidentialPardonForm :: execute(Bureaucrat const & executor) const
 
 PresidentialPardonForm :: ~PresidentialPardonForm()
 {
-    std :: cout << "Destructor of PresidentialPardonForm has been called\n ";
 }

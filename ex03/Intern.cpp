@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:47:04 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/25 18:25:13 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/28 22:02:13 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,24 @@
 
 Intern :: Intern()
 {
-    _name = "Default";
-    _target= "Default";
-
-    std :: cout << "Default constructor of Intern class has been called \n";
 }
 
-Intern :: Intern(const std :: string name, const std :: string target)
-{
-    _name = name;
-    _target = target;
-    std :: cout << "Parametrized constructor of Intern class has been called \n";
+// Intern :: Intern(const std :: string name, const std :: string target)
+// {
+//     _name = name;
+//     _target = target;
+//     std :: cout << "Parametrized constructor of Intern class has been called \n";
 
-}
+// }
 
 Intern :: Intern(Intern& other)
 {
-    std :: cout << "Copy constructor of Intern class has been called \n";
-    _name = other._name;
-    _target = other._target;
+    (void)other;
 }
 
 Intern& Intern :: operator=(Intern& other)
 {
-    if(this == &other)
-        return(*this);
-    _name = other._name;
-    _target = other._target;
+    (void)other;
     return(*this);
 }
 
@@ -82,5 +73,4 @@ AForm* Intern :: makeForm(const std :: string name, const std :: string target)
 
 Intern :: ~Intern()
 {
-    std :: cout << "Destructor of Intern class has been called \n";
 }

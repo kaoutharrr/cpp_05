@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:01:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/24 16:14:25 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/28 21:56:54 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 #include "Bureaucrat.hpp"
 
 
-const char*  RobotomyRequestForm :: FormNotSigned :: what() const _NOEXCEPT
+const char*  RobotomyRequestForm :: FormNotSigned :: what() const throw()
 {
     return("form not signed");
 }
 
 RobotomyRequestForm :: RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
-    std :: cout << "Default constructor of RobotomyRequestForm has been called \n";
     _target = "default";
 }
 
@@ -30,7 +29,6 @@ RobotomyRequestForm :: RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 
 RobotomyRequestForm :: RobotomyRequestForm(const std :: string& target) : AForm("RobotomyRequestForm", 72, 45)
 {
     _target = target;
-     std :: cout << "Parametrized constructor of RobotomyRequestForm has been called \n";
 }
 
 RobotomyRequestForm :: RobotomyRequestForm(RobotomyRequestForm& other) : AForm(other)
@@ -41,7 +39,6 @@ RobotomyRequestForm :: RobotomyRequestForm(RobotomyRequestForm& other) : AForm(o
 
 RobotomyRequestForm& RobotomyRequestForm :: operator=(RobotomyRequestForm& other)
 {
-    std :: cout << "Coppy asignement operator of RobotomyRequestForm has been called \n";
    _target = other._target;
    return(*this);
 }
@@ -65,5 +62,4 @@ void RobotomyRequestForm :: execute(Bureaucrat const &executor) const
 
 RobotomyRequestForm :: ~RobotomyRequestForm()
 {
-    std :: cout << "Destructor of RobotomyRequestForm has been called \n";
 }

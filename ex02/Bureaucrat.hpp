@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 22:47:20 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/20 03:39:59 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:48:13 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ class Bureaucrat
         class GradeTooHighException : public std :: exception
         {
             public :
-                 const char* what() const  _NOEXCEPT;
+                 const char* what() const  throw();
         };
         class GradeTooLowException : public std :: exception
         {
             public :
-                 const char* what() const  _NOEXCEPT;
+                 const char* what() const  throw();
         };
         Bureaucrat& operator=(Bureaucrat& other);
         const std :: string& getName() const;

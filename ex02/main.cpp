@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 03:16:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/24 16:18:58 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/28 20:16:20 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,10 @@ int main()
         president->execute(B);
         // president->beSigned(B);
     } 
-    catch(...)
+    catch(std::exception &e)
     {
-        std ::  cout << "lalalalal\n";
+        std :: cerr << "Exception : " << e.what() << std :: endl;
     }
-}
 
 // int main()
 // {
