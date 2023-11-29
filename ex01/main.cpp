@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 00:35:00 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 20:16:06 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 20:46:22 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ int main()
     {
         std :: cerr << "Exception : " << e.what() << std :: endl;
     }
- 
+    system("leaks Form");
 }

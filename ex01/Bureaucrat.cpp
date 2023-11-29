@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:07:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 21:54:14 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 20:40:53 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ const char*  Bureaucrat :: GradeTooLowException ::  what() const  throw()
 Bureaucrat :: Bureaucrat() : _name("default")
 {
     _grade = 150;
-    if(_grade < 1)
-        throw(GradeTooHighException());
-    if(_grade > 150)
-        throw(GradeTooLowException());
 }
 
 Bureaucrat :: Bureaucrat(const std :: string& name, int grade) : _name(name)
@@ -44,12 +40,12 @@ Bureaucrat :: Bureaucrat(const std :: string& name, int grade) : _name(name)
         throw(GradeTooLowException());
 }
 
-Bureaucrat :: Bureaucrat(Bureaucrat& other) : _name(other._name)
+Bureaucrat :: Bureaucrat(const Bureaucrat& other) : _name(other._name)
 {
     *this = other;
 }
 
-Bureaucrat& Bureaucrat :: operator=(Bureaucrat& other) 
+Bureaucrat& Bureaucrat :: operator=(const Bureaucrat& other) 
 {
     if(this == &other)
         return(*this);
@@ -92,17 +88,11 @@ void Bureaucrat :: signForm(Form& F)
     {
          F.beSigned(*this);
     }
-    catch(Form :: GradeTooHighException &e)
+    catch(std :: exception &e)
     {
        std :: cout << _name << " couldn't sign " << F.getName() ;
        std :: cout << " because " << e.what() << std :: endl;
     }
-    catch(Form :: GradeTooLowException &e)
-    {
-       std :: cout << _name << " couldn't sign " << F.getName() ;
-       std :: cout << " because " << e.what() << std :: endl;
-    }
-    
     if(F.isSigned() == true)
     {
         std :: cout << _name << " signed " << F.getName() << std :: endl;

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:01:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 21:56:54 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 20:53:12 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ RobotomyRequestForm :: RobotomyRequestForm(const std :: string& target) : AForm(
     _target = target;
 }
 
-RobotomyRequestForm :: RobotomyRequestForm(RobotomyRequestForm& other) : AForm(other)
+RobotomyRequestForm :: RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other)
 {
      std :: cout << "Copy constructor of RobotomyRequestForm has been called \n";
     _target = other._target;
 }
 
-RobotomyRequestForm& RobotomyRequestForm :: operator=(RobotomyRequestForm& other)
+RobotomyRequestForm& RobotomyRequestForm :: operator=(const RobotomyRequestForm& other)
 {
    _target = other._target;
    return(*this);
@@ -50,7 +50,7 @@ void RobotomyRequestForm :: execute(Bureaucrat const &executor) const
     if(this->getGradeToExec() < executor.getGrade())
         throw(GradeTooLowException());
     std :: cout << "Drilling noises ... \n";
-   std :: srand(std :: time(0));
+    std :: srand(std :: time(0));
     int rand =  std :: rand();
     if((rand % 2) == 0)
     {

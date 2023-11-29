@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 01:12:58 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/27 18:49:26 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 20:53:59 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class ShrubberyCreationForm : public AForm
     public :
         ShrubberyCreationForm();
         ShrubberyCreationForm(const std :: string& target);
-        ShrubberyCreationForm(ShrubberyCreationForm& other);
-        ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
+        ShrubberyCreationForm(const ShrubberyCreationForm& other);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
         class FormNotSigned : public std :: exception
         {
             public:

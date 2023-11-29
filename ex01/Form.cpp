@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 02:55:21 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/27 23:47:09 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 20:44:03 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,9 @@ const char* Form :: GradeTooLowException :: what() const throw()
     return("Grade too low");
 }
 
-Form:: Form(): _name("default") , _gradeToSign(0), _gradeToExecute(0)
+Form:: Form(): _name("default") , _gradeToSign(150), _gradeToExecute(150)
 {
     b = 0;
-    if(_gradeToExecute < 1 || _gradeToSign < 1)
-        throw(GradeTooHighException());
-    if(_gradeToExecute > 150 || _gradeToSign > 150)
-        throw(GradeTooLowException());
 }
 
 Form :: Form(const std :: string& name, int  toSign, int toExec) : _name(name), _gradeToSign(toSign), _gradeToExecute(toExec)
@@ -40,18 +36,18 @@ Form :: Form(const std :: string& name, int  toSign, int toExec) : _name(name), 
         throw(GradeTooLowException());
 }
 
-Form :: Form(Form& other)  : _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
+Form :: Form(const Form& other)  : _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 {
     *this = other;
 }
 
-Form& Form :: operator=(Form& other)
+Form& Form :: operator=(const Form& other)
 {
     b = other.b;
     return(*this);
 }
 
-const std :: string& Form :: getName()
+const std :: string& Form :: getName() const
 {
     return(_name);
 }

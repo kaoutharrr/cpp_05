@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 00:36:12 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/27 18:49:26 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 21:02:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define AFORM_HPP
 
 #include <iostream>
-#include<stdexcept>
+#include<exception>
 #include<cstdlib>
 #include<ctime>
 

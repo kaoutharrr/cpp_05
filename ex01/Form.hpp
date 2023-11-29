@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 01:57:33 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/27 18:47:43 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 21:02:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FORM_HPP
 
 #include <iostream>
-#include<stdexcept>
+#include<exception>
 #include"Bureaucrat.hpp"
 
 class Form
@@ -27,7 +27,7 @@ class Form
     public:
         Form();
         Form(const std :: string& name, int  toSign, int toExec);
-        Form(Form& other);
+        Form(const Form& other);
         class GradeTooHighException : public std :: exception
         {
             public:
@@ -38,8 +38,8 @@ class Form
             public:
                 const char* what() const throw();
         };
-        Form& operator=(Form& other);
-        const std :: string& getName();
+        Form& operator=(const Form& other);
+        const std :: string& getName() const;
         int getGradeToSign();
         int getGradeToExec();
         bool isSigned();

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 22:47:20 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 21:31:21 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 21:02:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BUREACRAT_HPP
 
 #include<iostream>
-#include <stdexcept>
+#include <exception>
 #include<cstring>
 
 class Bureaucrat
@@ -25,7 +25,7 @@ class Bureaucrat
     public:
         Bureaucrat();
         Bureaucrat(const std :: string& name, int grade);
-        Bureaucrat(Bureaucrat &other);
+        Bureaucrat(const Bureaucrat &other);
         class GradeTooHighException : public std :: exception
         {
             public :
@@ -36,7 +36,7 @@ class Bureaucrat
             public :
                  const char* what() const  throw();
         };
-        Bureaucrat& operator=(Bureaucrat& other);
+        Bureaucrat& operator=(const Bureaucrat& other);
         const std :: string& getName() const;
         void increment();
         void decrement();

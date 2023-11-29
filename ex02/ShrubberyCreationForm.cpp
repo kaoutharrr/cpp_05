@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 01:36:04 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 21:57:36 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 20:53:38 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ ShrubberyCreationForm :: ShrubberyCreationForm(const std :: string& target) : AF
     _target = target;
 }
 
-ShrubberyCreationForm :: ShrubberyCreationForm(ShrubberyCreationForm& other) : AForm(other)
+ShrubberyCreationForm :: ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other)
 {
     _target  = other._target;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm :: operator=(ShrubberyCreationForm& other)
+ShrubberyCreationForm& ShrubberyCreationForm :: operator=(const ShrubberyCreationForm& other)
 {
     if(this == &other)
         return(*this);

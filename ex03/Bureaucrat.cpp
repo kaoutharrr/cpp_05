@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:07:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 21:59:12 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/29 20:25:25 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,17 +92,12 @@ void Bureaucrat :: signForm(AForm& F)
     {
          F.beSigned(*this);
     }
-    catch(AForm :: GradeTooHighException &e)
+    catch(std :: exception &e)
     {
        std :: cout << _name << " couldn't sign " << F.getName() ;
        std :: cout << " because " << e.what() << std :: endl;
     }
-      catch(AForm :: GradeTooLowException &e)
-    {
-       std :: cout << _name << " couldn't sign " << F.getName() ;
-       std :: cout << " because " << e.what() << std :: endl;
-    }
-    
+
     if(F.isSigned() == true)
     {
         std :: cout << _name << " signed " << F.getName() << std :: endl;
@@ -116,7 +111,7 @@ void  Bureaucrat :: executeForm(AForm const & form)
     {
         form.execute(*this);
     }
-    catch(...)
+    catch(std :: exception &e)
     {
         std :: cerr << "Failed to exceute\n";
         return;
