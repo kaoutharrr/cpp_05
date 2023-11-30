@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:27:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 22:03:56 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 10:37:07 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ PresidentialPardonForm :: PresidentialPardonForm(const std :: string& target) : 
     _target = target;
 }
 
-PresidentialPardonForm ::  PresidentialPardonForm(PresidentialPardonForm& other) : AForm(other)
+PresidentialPardonForm ::  PresidentialPardonForm(const PresidentialPardonForm& other) : AForm(other)
 {
     _target = other._target;
 }
 
-PresidentialPardonForm& PresidentialPardonForm ::  operator=(PresidentialPardonForm & other) 
+PresidentialPardonForm& PresidentialPardonForm ::  operator=(const PresidentialPardonForm & other) 
 {
     _target = other._target;
     return(*this);

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:07:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/29 20:40:53 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 18:51:22 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,20 +84,22 @@ void Bureaucrat :: decrement()
 
 void Bureaucrat :: signForm(Form& F)
 {
-    try
+    if(F.isSigned() == false)
     {
-         F.beSigned(*this);
+        try
+        {
+            F.beSigned(*this);
+        }
+        catch(std :: exception &e)
+        {
+        std :: cout << _name << " couldn't sign " << F.getName() ;
+        std :: cout << " because " << e.what() << std :: endl;
+        }
+        if(F.isSigned() == true)
+        {
+            std :: cout << _name << " signed " << F.getName() << std :: endl;
+        }
     }
-    catch(std :: exception &e)
-    {
-       std :: cout << _name << " couldn't sign " << F.getName() ;
-       std :: cout << " because " << e.what() << std :: endl;
-    }
-    if(F.isSigned() == true)
-    {
-        std :: cout << _name << " signed " << F.getName() << std :: endl;
-    }
-
 }
 
 Bureaucrat :: ~Bureaucrat()

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:27:14 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 22:01:01 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 10:30:49 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ class Intern
         AForm* PardonMake(const std :: string target);
     public :
         Intern();
-       // Intern(const std :: string name, const std :: string _target);
-        Intern(Intern& other);
-        Intern& operator=(Intern& other);
+        Intern(const Intern& other);
+        Intern& operator=(const Intern& other);
         AForm* makeForm(const std :: string name, const std :: string target);
         ~Intern();
 };

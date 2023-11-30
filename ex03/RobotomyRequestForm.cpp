@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:01:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 22:04:22 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 10:40:57 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ RobotomyRequestForm :: RobotomyRequestForm(const std :: string& target) : AForm(
     _target = target;
 }
 
-RobotomyRequestForm :: RobotomyRequestForm(RobotomyRequestForm& other) : AForm(other)
+RobotomyRequestForm :: RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other)
 {
     _target = other._target;
 }
 
-RobotomyRequestForm& RobotomyRequestForm :: operator=(RobotomyRequestForm& other)
+RobotomyRequestForm& RobotomyRequestForm :: operator=(const RobotomyRequestForm& other)
 {
    _target = other._target;
    return(*this);

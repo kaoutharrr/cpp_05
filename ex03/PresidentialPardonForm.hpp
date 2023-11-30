@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:19:39 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/27 18:49:26 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 10:32:45 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class PresidentialPardonForm :  public AForm
     public:
         PresidentialPardonForm();
         PresidentialPardonForm(const std :: string& target);
-        PresidentialPardonForm(PresidentialPardonForm& other);
-        PresidentialPardonForm& operator=(PresidentialPardonForm& other);
+        PresidentialPardonForm(const PresidentialPardonForm& other);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
         class FormNotSigned : public std :: exception
         {
             public:

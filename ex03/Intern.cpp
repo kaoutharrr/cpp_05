@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:47:04 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/28 22:02:13 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 10:44:33 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,13 @@ Intern :: Intern()
 {
 }
 
-// Intern :: Intern(const std :: string name, const std :: string target)
-// {
-//     _name = name;
-//     _target = target;
-//     std :: cout << "Parametrized constructor of Intern class has been called \n";
 
-// }
-
-Intern :: Intern(Intern& other)
+Intern :: Intern(const Intern& other)
 {
-    (void)other;
+   *this = other;
 }
 
-Intern& Intern :: operator=(Intern& other)
+Intern& Intern :: operator=(const Intern& other)
 {
     (void)other;
     return(*this);
@@ -68,8 +61,6 @@ AForm* Intern :: makeForm(const std :: string name, const std :: string target)
 
     return(NULL);
 }
-
-
 
 Intern :: ~Intern()
 {

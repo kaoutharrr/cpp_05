@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 03:54:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/27 18:49:26 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 10:37:25 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class RobotomyRequestForm : public AForm
     public:
         RobotomyRequestForm();
         RobotomyRequestForm(const std :: string& target);
-        RobotomyRequestForm(RobotomyRequestForm& other);
-        RobotomyRequestForm& operator=(RobotomyRequestForm& other);
+        RobotomyRequestForm(const RobotomyRequestForm& other);
+        RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
         class FormNotSigned : public std :: exception
         {
             public:

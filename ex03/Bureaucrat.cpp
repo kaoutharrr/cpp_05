@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:07:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/29 20:25:25 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 10:29:16 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,15 @@ Bureaucrat :: Bureaucrat(const std :: string& name, int grade) : _name(name)
         throw(GradeTooLowException());
 }
 
-Bureaucrat :: Bureaucrat(Bureaucrat& other)
+Bureaucrat :: Bureaucrat(const Bureaucrat& other)
 {
         *this = other;
 }
 
-Bureaucrat& Bureaucrat :: operator=(Bureaucrat& other) 
+Bureaucrat& Bureaucrat :: operator=(const Bureaucrat& other) 
 {
-    if(this == &other)
-        return(*this);
-    _grade = other._grade;
+    if(this != &other)
+        _grade = other._grade;
     return(*this);
 }
 

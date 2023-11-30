@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 00:35:00 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/29 20:36:32 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 20:15:26 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ int main()
 {
     try
     {
-        Bureaucrat B;
+        Bureaucrat B("A", 1);
         std :: cout << B;
         B.decrement();
+       B.increment();
+        std :: cout << B;
     }
     catch(std::exception &e)
     {
         std :: cerr << "Exception : " << e.what() << std :: endl;
     }
-    system("leaks Bureaucrat");
+   // system("leaks Bureaucrat");
     return(0);
 }
