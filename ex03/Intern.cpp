@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:47:04 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/30 10:44:33 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/30 22:07:47 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ AForm* Intern :: makeForm(const std :: string name, const std :: string target)
         if(Names[i] == name)
         {
             std :: cout << "Intern creates " << name << "\n";
-            return((this->*(func[i]))(target));
+            return((*(func[i]))(target));
         }  
     }
     std :: cout << "unknown Name !!! \n";
